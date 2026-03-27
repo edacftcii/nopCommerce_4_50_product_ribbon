@@ -1,0 +1,8 @@
+@model Nop.Plugin.Widgets.ProductRibbon.Domain.ProductRibbon
+
+<link rel="stylesheet" href="~/Plugins/Widgets.ProductRibbon/wwwroot/css/productribbon.css" />
+
+<div class="product-ribbon-badge"
+     style="background:@Model.BackgroundColor;color:@Model.TextColor;">
+    @Model.Name
+</div>

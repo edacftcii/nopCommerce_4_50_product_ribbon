@@ -1,0 +1,95 @@
+@using Nop.Web.Framework.Models.DataTables
+@model Nop.Plugin.Widgets.ProductRibbon.Models.ProductRibbonSearchModel
+
+@{
+    Layout = "_AdminLayout";
+    ViewBag.PageTitle = "Product Ribbons";
+    NopHtml.SetActiveMenuItemSystemName("ProductRibbon.List");
+}
+
+<div class="content-header clearfix">
+    <h1 class="float-left">
+        Product Ribbons
+    </h1>
+    <div class="float-right">
+        <a asp-controller="ProductRibbon" asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-plus-square"></i>
+            Add New
+        </a>
+        <a asp-controller="ProductRibbon" asp-action="Mapping" class="btn btn-info">
+            <i class="fas fa-link"></i>
+            Product Mappings
+        </a>
+    </div>
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+        <nop-cards id="productribbon-list-cards">
+
+
+            <nop-card asp-name="productribbon-list"
+                      asp-icon="fas fa-list"
+                      asp-title="Ribbon List"
+                      asp-hide-block-attribute-name="ProductRibbonList.Hide"
+                      asp-hide="false"
+                      asp-advanced="false">
+
+                @await Html.PartialAsync("Table", new DataTablesModel
+                {
+                    Name = "productribbon-grid",
+                    UrlRead = new DataUrl("ListData", "ProductRibbon", null),
+                    UrlDelete = new DataUrl("Delete", "ProductRibbon", null),
+                    Length = 10,
+                    LengthMenu = "10,20,50",
+                    ColumnCollection = new List<ColumnProperty>
+                    {
+                        new ColumnProperty(nameof(ProductRibbonModel.Name))
+                        {
+                            Title = "Ribbon Text"
+                        },
+                        new ColumnProperty(nameof(ProductRibbonModel.BackgroundColor))
+                        {
+                            Title = "Background Color",
+                            Render = new RenderCustom("renderBackgroundColor")
+                        },
+                        new ColumnProperty(nameof(ProductRibbonModel.TextColor))
+                        {
+                            Title = "Text Color"
+                        },
+                        new ColumnProperty(nameof(ProductRibbonModel.IsActive))
+                        {
+                            Title = "Active",
+                            Width = "100",
+                            ClassName = NopColumnClassDefaults.CenterAll,
+                            Render = new RenderBoolean()
+                        },
+                        new ColumnProperty(nameof(ProductRibbonModel.Id))
+                        {
+                            Title = "Edit",
+                            Width = "100",
+                            ClassName = NopColumnClassDefaults.Button,
+                            Render = new RenderButtonEdit(new DataUrl("Edit"))
+                        },
+                        new ColumnProperty(nameof(ProductRibbonModel.Id))
+                        {
+                            Title = "Delete",
+                            Width = "100",
+                            ClassName = NopColumnClassDefaults.Button,
+                            Render = new RenderButtonRemove("Delete")
+                        }
+                    }
+                })
+
+            </nop-card>
+        </nop-cards>
+    </div>
+</section>
+
+<script>
+    function renderBackgroundColor(data, type, row, meta) {
+        if (!data)
+            return '';
+        return '<span style="display:inline-block;padding:6px 12px;border-radius:4px;background:' + data + ';color:#fff;">' + data + '</span>';
+    }
+</script>

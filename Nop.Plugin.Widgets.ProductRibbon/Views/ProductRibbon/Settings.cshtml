@@ -1,0 +1,43 @@
+@model Nop.Plugin.Widgets.ProductRibbon.Models.ProductRibbonSearchModel
+
+@{
+    Layout = "_AdminLayout";
+    ViewBag.PageTitle = "Product Ribbon Settings";
+}
+
+<div class="content-header clearfix">
+    <h1 class="float-left">
+        Plugin Settings
+    </h1>
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+
+        <form asp-controller="ProductRibbon" asp-action="SaveSettings" method="post">
+
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <nop-label asp-for="PluginEnabled" />
+                        </div>
+                        <div class="col-md-9">
+                            <nop-editor asp-for="PluginEnabled" />
+                        </div>
+                    </div>
+
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary">
+                            Save Settings
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</section>

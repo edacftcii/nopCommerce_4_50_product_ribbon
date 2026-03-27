@@ -1,0 +1,44 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Nop.Plugin.Widgets.ProductRibbon
+build_property.RootNamespace = Nop.Plugin.Widgets.ProductRibbon
+build_property.ProjectDir = /Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Plugins/Nop.Plugin.Widgets.ProductRibbon/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = /Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Plugins/Nop.Plugin.Widgets.ProductRibbon
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Plugins/Nop.Plugin.Widgets.ProductRibbon/Views/ProductRibbon/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdFJpYmJvbi9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Plugins/Nop.Plugin.Widgets.ProductRibbon/Views/ProductRibbon/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdFJpYmJvbi9EZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Plugins/Nop.Plugin.Widgets.ProductRibbon/Views/ProductRibbon/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdFJpYmJvbi9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Plugins/Nop.Plugin.Widgets.ProductRibbon/Views/ProductRibbon/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdFJpYmJvbi9MaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Plugins/Nop.Plugin.Widgets.ProductRibbon/Views/ProductRibbon/Mapping.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdFJpYmJvbi9NYXBwaW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Plugins/Nop.Plugin.Widgets.ProductRibbon/Views/ProductRibbon/Settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdFJpYmJvbi9TZXR0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Plugins/Nop.Plugin.Widgets.ProductRibbon/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 

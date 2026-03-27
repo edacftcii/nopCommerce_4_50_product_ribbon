@@ -1,0 +1,101 @@
+@using Nop.Web.Framework.Models.DataTables
+@model Nop.Plugin.Widgets.ProductRibbon.Models.ProductRibbonMappingModel
+
+@{
+    Layout = "_AdminLayout";
+    ViewBag.PageTitle = "Product Ribbon Mappings";
+    NopHtml.SetActiveMenuItemSystemName("ProductRibbon.Mapping");
+}
+
+<form asp-controller="ProductRibbon" asp-action="Mapping" method="post">
+    <div class="content-header clearfix">
+        <h1 class="float-left">
+            Product Ribbon Mappings
+        </h1>
+        <div class="float-right">
+            <button type="submit" name="save" class="btn btn-primary">
+                <i class="far fa-save"></i>
+                Save Mapping
+            </button>
+            <a asp-controller="ProductRibbon" asp-action="List" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i>
+                Back to ribbons
+            </a>
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div asp-validation-summary="All"></div>
+
+            <nop-cards id="productribbon-mapping-cards">
+
+                <nop-card asp-name="productribbon-mapping-create"
+                          asp-icon="fas fa-link"
+                          asp-title="Create Mapping"
+                          asp-hide-block-attribute-name="ProductRibbonMapping.Create"
+                          asp-hide="false"
+                          asp-advanced="false">
+
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <nop-label asp-for="ProductId" />
+                        </div>
+                        <div class="col-md-9">
+                            <nop-select asp-for="ProductId" asp-items="Model.AvailableProducts" />
+                            <span asp-validation-for="ProductId"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <nop-label asp-for="ProductRibbonId" />
+                        </div>
+                        <div class="col-md-9">
+                            <nop-select asp-for="ProductRibbonId" asp-items="Model.AvailableRibbons" />
+                            <span asp-validation-for="ProductRibbonId"></span>
+                        </div>
+                    </div>
+
+                </nop-card>
+
+                <nop-card asp-name="productribbon-mapping-list"
+                          asp-icon="fas fa-list"
+                          asp-title="Existing Mappings"
+                          asp-hide-block-attribute-name="ProductRibbonMapping.List"
+                          asp-hide="false"
+                          asp-advanced="false">
+
+                    @await Html.PartialAsync("Table", new DataTablesModel
+                    {
+                        Name = "productribbonmapping-grid",
+                        UrlRead = new DataUrl("MappingListData", "ProductRibbon", null),
+                        UrlDelete = new DataUrl("DeleteMapping", "ProductRibbon", null),
+                        Length = 10,
+                        LengthMenu = "10,20,50",
+                        ColumnCollection = new List<ColumnProperty>
+                        {
+                            new ColumnProperty(nameof(ProductRibbonMappingListItemModel.ProductName))
+                            {
+                                Title = "Product"
+                            },
+                            new ColumnProperty(nameof(ProductRibbonMappingListItemModel.RibbonName))
+                            {
+                                Title = "Ribbon"
+                            },
+                            new ColumnProperty(nameof(ProductRibbonMappingListItemModel.Id))
+                            {
+                                Title = "Delete",
+                                Width = "100",
+                                ClassName = NopColumnClassDefaults.Button,
+                                Render = new RenderButtonRemove("DeleteMapping")
+                            }
+                        }
+                    })
+
+                </nop-card>
+
+            </nop-cards>
+        </div>
+    </section>
+</form>

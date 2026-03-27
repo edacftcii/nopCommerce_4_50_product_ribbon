@@ -1,0 +1,11 @@
+{
+  "Group": "Widgets",
+  "FriendlyName": "Product Ribbon Widget",
+  "SystemName": "Widgets.ProductRibbon",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.50" ],
+  "Author": "Eda Ciftci",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.ProductRibbon.dll",
+  "Description": "Displays product ribbons such as New, Bestseller, Discount on product boxes."
+}

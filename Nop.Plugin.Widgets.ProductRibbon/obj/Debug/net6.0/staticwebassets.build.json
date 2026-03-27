@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "PnKdTdOQ9XZkUXKYy+V15Lobd1HJ6Y1DAvImTlYSTOI=",
+  "Source": "Nop.Plugin.Widgets.ProductRibbon",
+  "BasePath": "_content/Nop.Plugin.Widgets.ProductRibbon",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Nop.Plugin.Widgets.ProductRibbon/wwwroot",
+      "Source": "Nop.Plugin.Widgets.ProductRibbon",
+      "ContentRoot": "/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Plugins/Nop.Plugin.Widgets.ProductRibbon/wwwroot/",
+      "BasePath": "_content/Nop.Plugin.Widgets.ProductRibbon",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Plugins/Nop.Plugin.Widgets.ProductRibbon/wwwroot/css/productribbon.css",
+      "SourceId": "Nop.Plugin.Widgets.ProductRibbon",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Plugins/Nop.Plugin.Widgets.ProductRibbon/wwwroot/",
+      "BasePath": "_content/Nop.Plugin.Widgets.ProductRibbon",
+      "RelativePath": "css/productribbon.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/productribbon.css"
+    }
+  ]
+}
