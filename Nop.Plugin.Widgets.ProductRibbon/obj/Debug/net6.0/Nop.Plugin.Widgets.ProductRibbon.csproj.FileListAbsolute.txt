@@ -1,10 +1,13 @@
-/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/Views/ProductRibbon/Create.cshtml
+/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/net6.0/wwwroot/css/productribbon.css
 /Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/Views/ProductRibbon/Default.cshtml
-/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/Views/ProductRibbon/Edit.cshtml
 /Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/Views/ProductRibbon/List.cshtml
 /Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/Views/ProductRibbon/Mapping.cshtml
+/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/Views/ProductRibbon/Settings.cshtml
 /Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/Views/_ViewImports.cshtml
+/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/wwwroot/css/productribbon.css
 /Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/plugin.json
+/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/Views/ProductRibbon/Create.cshtml
+/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/Views/ProductRibbon/Edit.cshtml
 /Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/Nop.Plugin.Widgets.ProductRibbon.staticwebassets.runtime.json
 /Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/Nop.Plugin.Widgets.ProductRibbon.deps.json
 /Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/Nop.Plugin.Widgets.ProductRibbon.dll
@@ -312,6 +315,3 @@
 /Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Plugins/Nop.Plugin.Widgets.ProductRibbon/obj/Debug/net6.0/refint/Nop.Plugin.Widgets.ProductRibbon.dll
 /Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Plugins/Nop.Plugin.Widgets.ProductRibbon/obj/Debug/net6.0/Nop.Plugin.Widgets.ProductRibbon.pdb
 /Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Plugins/Nop.Plugin.Widgets.ProductRibbon/obj/Debug/net6.0/ref/Nop.Plugin.Widgets.ProductRibbon.dll
-/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/net6.0/wwwroot/css/productribbon.css
-/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/wwwroot/css/productribbon.css
-/Users/eda/Projects/nopCommerce_4_50_product_ribbon/src/Presentation/Nop.Web/Plugins/Widgets.ProductRibbon/Views/ProductRibbon/Settings.cshtml
