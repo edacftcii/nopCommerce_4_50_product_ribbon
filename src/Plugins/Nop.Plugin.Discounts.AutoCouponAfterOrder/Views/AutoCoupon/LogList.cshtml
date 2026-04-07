@@ -1,0 +1,81 @@
+@using Nop.Web.Framework.Models.DataTables
+@inject Nop.Services.Localization.ILocalizationService localizationService
+@model Nop.Plugin.Discounts.AutoCouponAfterOrder.Models.CouponGenerationLogSearchModel
+
+@{
+    Layout = "_AdminLayout";
+
+    var pageTitle = await localizationService.GetResourceAsync("Plugins.Discounts.AutoCouponAfterOrder.Menu.Logs");
+    var orderIdText = await localizationService.GetResourceAsync("Plugins.Discounts.AutoCouponAfterOrder.Fields.OrderId");
+    var customerIdText = await localizationService.GetResourceAsync("Plugins.Discounts.AutoCouponAfterOrder.Fields.CustomerId");
+    var discountIdText = await localizationService.GetResourceAsync("Plugins.Discounts.AutoCouponAfterOrder.Fields.DiscountId");
+    var couponCodeText = await localizationService.GetResourceAsync("Plugins.Discounts.AutoCouponAfterOrder.Fields.CouponCode");
+    var discountValueText = await localizationService.GetResourceAsync("Plugins.Discounts.AutoCouponAfterOrder.Fields.DiscountValue");
+    var discountTypeNameText = await localizationService.GetResourceAsync("Plugins.Discounts.AutoCouponAfterOrder.Fields.DiscountTypeName");
+    var createdOnUtcText = await localizationService.GetResourceAsync("Plugins.Discounts.AutoCouponAfterOrder.Fields.CreatedOnUtc");
+    var expirationDateUtcText = await localizationService.GetResourceAsync("Plugins.Discounts.AutoCouponAfterOrder.Fields.ExpirationDateUtc");
+}
+
+<div class="content-header clearfix">
+    <h1 class="float-left">
+        @pageTitle
+    </h1>
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+        <nop-cards id="autocoupon-logs-cards">
+            <nop-card asp-name="autocoupon-logs"
+                      asp-icon="fas fa-list"
+                      asp-title="@pageTitle"
+                      asp-hide-block-attribute-name="AutoCouponAfterOrder.Logs.Hide"
+                      asp-hide="false"
+                      asp-advanced="false">
+
+                @await Html.PartialAsync("Table", new DataTablesModel
+                {
+                    Name = "autocoupon-logs-grid",
+                    UrlRead = new DataUrl("LogListData", "AutoCoupon", null),
+                    Length = 10,
+                    LengthMenu = "10,20,50",
+                    ColumnCollection = new List<ColumnProperty>
+                    {
+                        new ColumnProperty(nameof(Nop.Plugin.Discounts.AutoCouponAfterOrder.Models.CouponGenerationLogModel.OrderId))
+                        {
+                            Title = orderIdText
+                        },
+                        new ColumnProperty(nameof(Nop.Plugin.Discounts.AutoCouponAfterOrder.Models.CouponGenerationLogModel.CustomerId))
+                        {
+                            Title = customerIdText
+                        },
+                        new ColumnProperty(nameof(Nop.Plugin.Discounts.AutoCouponAfterOrder.Models.CouponGenerationLogModel.DiscountId))
+                        {
+                            Title = discountIdText
+                        },
+                        new ColumnProperty(nameof(Nop.Plugin.Discounts.AutoCouponAfterOrder.Models.CouponGenerationLogModel.CouponCode))
+                        {
+                            Title = couponCodeText
+                        },
+                        new ColumnProperty(nameof(Nop.Plugin.Discounts.AutoCouponAfterOrder.Models.CouponGenerationLogModel.DiscountValue))
+                        {
+                            Title = discountValueText
+                        },
+                        new ColumnProperty(nameof(Nop.Plugin.Discounts.AutoCouponAfterOrder.Models.CouponGenerationLogModel.DiscountTypeName))
+                        {
+                            Title = discountTypeNameText
+                        },
+                        new ColumnProperty(nameof(Nop.Plugin.Discounts.AutoCouponAfterOrder.Models.CouponGenerationLogModel.CreatedOnUtc))
+                        {
+                            Title = createdOnUtcText
+                        },
+                        new ColumnProperty(nameof(Nop.Plugin.Discounts.AutoCouponAfterOrder.Models.CouponGenerationLogModel.ExpirationDateUtc))
+                        {
+                            Title = expirationDateUtcText
+                        }
+                    }
+                })
+
+            </nop-card>
+        </nop-cards>
+    </div>
+</section>

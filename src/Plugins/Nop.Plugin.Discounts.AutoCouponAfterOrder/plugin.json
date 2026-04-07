@@ -1,0 +1,12 @@
+{
+  "Group": "Discounts",
+  "FriendlyName": "Auto Coupon After Order",
+  "SystemName": "Discounts.AutoCouponAfterOrder",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.50" ],
+  "Author": "Eda",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Discounts.AutoCouponAfterOrder.dll",
+  "Description": "Generates an automatic discount coupon after a paid order and stores coupon generation logs."
+
+}

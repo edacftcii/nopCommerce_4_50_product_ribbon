@@ -1,0 +1,122 @@
+@model Nop.Plugin.Discounts.AutoCouponAfterOrder.Models.ConfigurationModel
+
+@{
+    Layout = "_AdminLayout";
+    ViewBag.PageTitle = "Configuration";
+}
+
+<form asp-controller="AutoCoupon" asp-action="Configure" method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="content-header clearfix">
+        <h1 class="pull-left">
+            Configuration
+        </h1>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="form-horizontal">
+                <nop-cards id="autocoupon-cards">
+                    <nop-card asp-name="autocoupon-settings"
+                              asp-icon="fas fa-cog"
+                              asp-title="Auto Coupon Settings"
+                              asp-hide-block-attribute-name=""
+                              asp-hide="false"
+                              asp-advanced="false">
+
+                        <div class="card-body">
+
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <nop-label asp-for="Enabled" />
+                                </div>
+                                <div class="col-md-9">
+                                    <nop-editor asp-for="Enabled" />
+                                    <span asp-validation-for="Enabled"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <nop-label asp-for="DiscountTypeId" />
+                                </div>
+                                <div class="col-md-9">
+                                    <nop-select asp-for="DiscountTypeId"
+                                                asp-items="Model.AvailableDiscountTypes" />
+                                    <span asp-validation-for="DiscountTypeId"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <nop-label asp-for="DiscountValue" />
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <input asp-for="DiscountValue"
+                                               class="form-control"
+                                               id="DiscountValue"
+                                               type="number"
+                                               step="0.01" />
+                                        <div class="input-group-append" id="discountValueSuffixWrap">
+                                            <span class="input-group-text" id="discountValueSuffix">%</span>
+                                        </div>
+                                    </div>
+                                    <span asp-validation-for="DiscountValue"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <nop-label asp-for="ValidDays" />
+                                </div>
+                                <div class="col-md-9">
+                                    <nop-editor asp-for="ValidDays" />
+                                    <span asp-validation-for="ValidDays"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </nop-card>
+                </nop-cards>
+
+                <div class="card-footer text-center">
+                    <button type="submit" name="save" class="btn bg-blue">
+                        <i class="far fa-save"></i>
+                        Kaydet
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+
+<script>
+    function updateDiscountSuffix() {
+        var typeElement = document.getElementById("DiscountTypeId");
+        var suffix = document.getElementById("discountValueSuffix");
+
+        if (!typeElement || !suffix)
+            return;
+
+        var type = typeElement.value;
+
+        if (type === "1") {
+            suffix.innerText = "%";
+        } else if (type === "2") {
+            suffix.innerText = "₺";
+        } else {
+            suffix.innerText = "";
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        updateDiscountSuffix();
+
+        var typeElement = document.getElementById("DiscountTypeId");
+        if (typeElement) {
+            typeElement.addEventListener("change", updateDiscountSuffix);
+        }
+    });
+</script>

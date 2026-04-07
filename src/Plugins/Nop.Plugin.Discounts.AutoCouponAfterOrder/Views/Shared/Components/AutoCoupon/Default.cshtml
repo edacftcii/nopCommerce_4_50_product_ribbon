@@ -1,0 +1,38 @@
+@model Nop.Plugin.Discounts.AutoCouponAfterOrder.Models.PublicCouponNotificationModel
+
+@if (Model != null && Model.HasCoupon)
+{
+    <div style="margin:15px auto; max-width:600px; padding:15px; border:1px solid #d6e9c6; background:#f9fff5; text-align:left;">
+        <strong style="display:block; margin-bottom:10px;">Yeni kuponunuz hazır</strong>
+
+        <div style="margin-bottom:6px;">
+            Siparişiniz sonrasında bir sonraki alışverişinizde kullanabileceğiniz kupon tanımlandı.
+        </div>
+
+        <div style="margin-bottom:6px;">
+            <strong>Kupon kodu:</strong> @Model.CouponCode
+        </div>
+
+        <div style="margin-bottom:6px;">
+            <strong>İndirim tipi:</strong> @Model.DiscountTypeText
+        </div>
+
+       <div style="margin-bottom:6px;">
+    <strong>İndirim:</strong>
+    @if (Model.DiscountTypeText == "Percentage")
+    {
+        <span>%@Model.DiscountValue.ToString("0.##") indirim</span>
+    }
+    else
+    {
+        <span>@Model.DiscountValue.ToString("0.##") ₺ indirim</span>
+    }
+</div>
+        @if (Model.ExpirationDateUtc.HasValue)
+        {
+            <div>
+                <strong>Son kullanım tarihi:</strong> @Model.ExpirationDateUtc.Value.ToString("dd.MM.yyyy HH:mm")
+            </div>
+        }
+    </div>
+}

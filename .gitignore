@@ -1,0 +1,8 @@
+**/bin/
+**/obj/
+src/Presentation/Nop.Web/wwwroot/bundles/
+src/Presentation/Nop.Web/wwwroot/images/thumbs/
+src/Presentation/Nop.Web/App_Data/
+src/Presentation/Nop.Web/Plugins/**/*.dll
+src/Presentation/Nop.Web/Plugins/**/*.pdb
+src/Presentation/Nop.Web/Plugins/**/*.deps.json
