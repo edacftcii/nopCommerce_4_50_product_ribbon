@@ -1,0 +1,11 @@
+{
+  "Group": "Misc",
+  "FriendlyName": "Abandoned Cart Reminder",
+  "SystemName": "Misc.AbandonedCartReminder",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.50" ],
+  "Author": "Eda",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Misc.AbandonedCartReminder.dll",
+  "Description": "Sends reminder emails to customers who left products in their cart."
+}

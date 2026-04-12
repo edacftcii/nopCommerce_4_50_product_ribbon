@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputPath>$(SolutionDir)/Presentation/Nop.Web/Plugins/Misc.AbandonedCartReminder</OutputPath>
+    <OutDir>$(OutputPath)</OutDir>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <DefaultItemExcludes>$(DefaultItemExcludes);bin/**;obj/**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(SolutionDir)/Presentation/Nop.Web.Framework/Nop.Web.Framework.csproj" />
+    <ClearPluginAssemblies Include="$(SolutionDir)/Build/ClearPluginAssemblies.proj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="bin/**" />
+    <Compile Remove="obj/**" />
+    <EmbeddedResource Remove="bin/**" />
+    <EmbeddedResource Remove="obj/**" />
+    <None Remove="bin/**" />
+    <None Remove="obj/**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ViewFiles Include="Views/**/*" />
+  </ItemGroup>
+
+  <Target Name="CopyPluginExtraFiles" AfterTargets="Build">
+    <Copy SourceFiles="plugin.json"
+          DestinationFolder="$(OutDir)"
+          SkipUnchangedFiles="true" />
+
+    <Copy SourceFiles="@(ViewFiles)"
+          DestinationFiles="@(ViewFiles->'$(OutDir)/Views/%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="NopTarget" AfterTargets="Build">
+    <MSBuild Projects="@(ClearPluginAssemblies)"
+             Properties="PluginPath=$(OutDir)"
+             Targets="NopClear" />
+  </Target>
+
+</Project>
